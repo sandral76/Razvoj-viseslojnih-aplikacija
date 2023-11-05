@@ -1,1 +1,1 @@
-Aplikacija za evidenciju o preduzećima, sektorima u kojima radnicima rade, i njihovim obrazovanjima. Na strani servera koristi Java Spring Boot, dizajn aplikacije na strani klijenta koristeći Angular framevork.
+Aplikacija za evidenciju o preduzećima, sektorima u kojima radnicima rade, i njihovim obrazovanjima. Na strani servera koristi Java Spring Boot, dizajn aplikacije na strani klijenta koristi Angular framework.
