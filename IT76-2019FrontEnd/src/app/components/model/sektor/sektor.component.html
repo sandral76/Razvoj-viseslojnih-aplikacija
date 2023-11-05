@@ -1,0 +1,63 @@
+<mat-toolbar color="primary">
+    <span class="title-center">Sektor</span>
+</mat-toolbar>
+
+  <div class="container mat-elavation-z8">
+    <mat-form-field class="serch-field" [appearance]="'fill'">
+      <input matInput placeholder="Pretrazite sektor:" (keyup)="applyFilter($event)"/>
+    </mat-form-field>
+      <!--datasource-odatle se dovlace podaci za tabelu koja se prikazuje, kojke smo dobili kad smo se subsk na servis-->
+      <!-- kako dobijmo podatek u tabeli, kako su rasporedjeni hederi, sta je let row-->
+    <mat-table #table [dataSource]="dataSource" class="mat-cell" matSort>
+      <!--ID-->
+      <!--matcolumn-mapiranje, gleda sta se nalazi u display col i mapira shodno tome,-->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
+        <!-- mat cell=let row-izvlacimo vrednost iz promenljive-->
+        <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
+      </ng-container>
+      <!--Naziv-->
+      <ng-container matColumnDef="naziv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Naziv</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.naziv }}</mat-cell>
+      </ng-container>
+      <!-- Oznaka -->
+      <ng-container matColumnDef="oznka">
+        <mat-header-cell *matHeaderCellDef>Oznaka</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{ row.oznka }}</mat-cell>
+      </ng-container>
+         <!-- Preduzece -->
+      <ng-container matColumnDef="preduzece">
+            <mat-header-cell *matHeaderCellDef>Preduzece</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{ row.preduzece.naziv }}</mat-cell>
+      </ng-container>
+      <!-- Action Buttons -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-icon-button color="primary" (click)="openDialog(1)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row; let i = index">
+          <button mat-icon-button color="primary"  (click)="openDialog(2,row.id,row.naziv,row.oznka,row.preduzece)">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="primary"  (click)="openDialog(3,row.id,row.naziv,row.oznka,row.preduzece)">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+     <!-- prati se red postavljen u nizu u displ col, iako izmenimo red containera-->
+     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+     <mat-row style="cursor: pointer;" *matRowDef="let row; columns: displayedColumns"
+     (click)="select(row)">
+     </mat-row>
+   </mat-table>
+   <div class="container mat-elavation-z8">
+    <app-radnik *ngIf="selectedSektorTop" [selectedSektorBottom]="selectedSektorTop">
+      
+    </app-radnik>
+  </div>
+   <mat-paginator [pageSize]="5" [pageSizeOptions]="[3,5,10,15]">
+  </mat-paginator>
+ </div> 

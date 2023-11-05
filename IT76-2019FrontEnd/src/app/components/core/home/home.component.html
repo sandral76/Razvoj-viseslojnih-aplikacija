@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="/about">O nama</a></li>
+                <li><a href="/author">Autor</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>
+                Početna strana
+            </h1>
+            <p>
+                Aplikacija vodi evidenciju o preduzećima, sektorima u kojima radnicima rade, i njihovim obrazovanjima.<br>
+                Aplikacija je razvijana u Springu i angular frameworku.
+            </p>
+            <button type="button" routerLink="/obrazovanje">Istražite</button>
+        </div>
+        <div class="col">
+            <div class="card card1" routerLink="/obrazovanje">
+                <h5>Obrazovanje</h5>
+                <p>
+                    Ovde možete pogedati, dodati, updatovati ili obrisati  obrazovanje postoje u okviru sistema.
+                </p>
+            </div>
+            <div class="card card2" routerLink="/preduzece">
+                <h5>Preduzece</h5>
+                <p>
+                    Ovde možete pogedati, dodati, updatovati ili obrisati preduzeća u okviru sistema.
+                </p>
+            </div>
+            <div class="card card3" routerLink="/sektor">
+                <h5>Sektor</h5>
+                <p>
+                    Ovde možete pogedati, dodati, updatovati ili obrisati sektore u okviru sistema, i u koviru njih radnike.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>

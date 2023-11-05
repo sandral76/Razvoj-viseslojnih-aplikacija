@@ -1,0 +1,48 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="over" [fixedInViewport]="true" opened mode="side">
+    <mat-accordion>
+      <a mat-button style="text-align:center">
+        <mat-icon>
+          home
+        </mat-icon>
+      </a>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Aplikacija
+          </mat-panel-title>
+          <mat-panel-description>
+            Aplikacija za vodjenje evidencije
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-raised-button routerLink="/obrazovanje">Obrazovanje</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-raised-button routerLink="/preduzece" color="accent">Preduzece</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-raised-button routerLink="/sektor" color="primary">Sektor</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header> <!-- da se prikazuje i kad se prosiri-->
+          <mat-panel-title style="text-align:left;">Informacije</mat-panel-title> 
+          <mat-panel-description>
+            Osnovne informacije o aplikaciji
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-raised-button routerLink="/about">O nama</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-raised-button routerLink="/author" color="accent">Autor</a>
+        </mat-nav-list>
+        <mat-nav-list>
+          <a mat-raised-button routerLink="/home" color="primary">Početna strana</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

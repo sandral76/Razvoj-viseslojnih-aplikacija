@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Popins', sans-serif;
+}
+
+.container{
+    text-align:center;
+    background: #f26a8c;
+    height: 135%;
+}
+
+.header{
+    padding-top: 30px;
+    color:#444;
+    font-size: 20px;
+    margin: auto;
+    line-height: 50px;
+}
+
+.sub-container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 48px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.teams{
+    margin: 10px;
+    padding: 22px;
+    max-width:30%;
+    cursor: pointer;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+
+.social-links img{
+    width: 30px;
+    height: 30px;
+}
+
+.teams img{
+    width: 200px;
+    height: 200px;
+}
+.name
+{
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;  
+}
+.desig{
+    font-style: italic;
+    color:#999;
+}
+.about{
+    margin: 20px 0;
+    font-weight: lighter;
+    color: #3a3838;
+    text-align: justify;
+}
+
+.social-links{
+    margin: 14px;
+}
+
+.social-links a{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    transition: .4s;
+
+}
+
+.social-links a i{
+    color: #444;
+
+}
+
+.social-links a:hover{
+    transform: scale(1.5);
+}
+
+.social-links img{
+    width: 30px;
+    height: 30px;
+}
+
+.teams:hover{
+    background: #f49cbb;
+    border-radius: 12px ;
+}
+
+@media screen and(max-width:600px) {
+    .teams{
+        max-width: 100%;
+    }
+    
+}
